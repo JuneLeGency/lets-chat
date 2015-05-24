@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
+    base64_encode = require('base64').encode,
     ObjectId = Schema.ObjectId;
 
 var FileSchema = new Schema({
@@ -47,6 +48,8 @@ FileSchema.method('toJSON', function() {
         type: this.type,
         size: Math.floor(this.size / 1024) + 'kb',
         url: this.url,
+        url_mi:"http://d.miwifi.com/d2r/?url=" +
+        base64_encode('http://note.letvr.com/'+this.url) + "&src=demo",
         uploaded: this.uploaded
     };
 });
