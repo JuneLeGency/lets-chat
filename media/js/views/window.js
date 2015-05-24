@@ -192,7 +192,7 @@
 
             var roomID = message.room.id,
                 avatar = message.owner.avatar,
-                icon = 'https://www.gravatar.com/avatar/' + avatar + '?s=50',
+                icon = 'http://api.adorable.io/avatars/92/' + avatar + '?s=50',
                 title = message.owner.displayName + ' in ' + message.room.name,
                 mention = message.mentioned;
 

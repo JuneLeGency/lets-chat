@@ -76,7 +76,7 @@
             var valid = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email);
             if (valid) {
                 $('.lcb-login-avatar')
-                    .attr('src', 'https://www.gravatar.com/avatar/' + md5(email) + '?s=100?d=mm')
+                    .attr('src', 'http://api.adorable.io/avatars/92/' + md5(email))
                     .addClass('show');
             } else {
                 $('.lcb-login-avatar').removeClass('show');
