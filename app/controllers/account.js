@@ -216,7 +216,7 @@ module.exports = function() {
 
                 return res.status(403).json({
                     status: 'error',
-                    message: 'Permission denied'
+                    message: '权限不足'
                 });
             }
 
@@ -228,7 +228,7 @@ module.exports = function() {
             if (fields.password !== passwordConfirm) {
                 return res.status(400).json({
                     status: 'error',
-                    message: 'Password not confirmed'
+                    message: '密码没被确认'
                 });
             }
 
@@ -244,10 +244,10 @@ module.exports = function() {
 
             core.account.create('local', data, function(err, user) {
                 if (err) {
-                    var message = 'Sorry, we could not process your request';
+                    var message = '对不起,无法处理您的请求';
                     // User already exists
                     if (err.code === 11000) {
-                        message = 'Email has already been taken';
+                        message = '邮箱已经被用了';
                     }
                     // Invalid username
                     if (err.errors) {
@@ -267,8 +267,8 @@ module.exports = function() {
 
                 res.status(201).json({
                     status: 'success',
-                    message: 'You\'ve been registered, ' +
-                             'please try logging in now!'
+                    message: '您已经注册, ' +
+                             '请登陆!'
                 });
             });
         },
@@ -277,7 +277,7 @@ module.exports = function() {
                 if (err) {
                     return res.status(400).json({
                         status: 'error',
-                        message: 'There were problems logging you in.',
+                        message: '登陆出现问题.',
                         errors: err
                     });
                 }
@@ -285,7 +285,7 @@ module.exports = function() {
                 if (!user && info && info.locked) {
                     return res.status(403).json({
                         status: 'error',
-                        message: info.message || 'Account is locked.'
+                        message: info.message || '账户被锁.'
                     });
                 }
 
@@ -293,7 +293,7 @@ module.exports = function() {
                     return res.status(401).json({
                         status: 'error',
                         message: info && info.message ||
-                                 'Incorrect login credentials.'
+                                 '登陆认证失败.'
                     });
                 }
 
@@ -301,7 +301,7 @@ module.exports = function() {
                     if (err) {
                         return res.status(400).json({
                             status: 'error',
-                            message: 'There were problems logging you in.',
+                            message: '登陆出现问题.',
                             errors: err
                         });
                     }
@@ -310,14 +310,14 @@ module.exports = function() {
                         if (err) {
                             return res.status(400).json({
                                 status: 'error',
-                                message: 'There were problems logging you in.',
+                                message: '登陆出现问题.',
                                 errors: err
                             });
                         }
                         req.session.passport = temp;
                         res.json({
                             status: 'success',
-                            message: 'Logging you in...'
+                            message: '登陆中...'
                         });
                     });
                 });

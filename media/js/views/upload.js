@@ -73,11 +73,11 @@ Dropzone && (Dropzone.autoDiscover = false);
                 return file.status !== 'success';
             });
             if (remaining) {
-                swal('Woops!', 'There were some issues uploading your files.', 'warning');
+                swal('额!', '上传文件出了岔子.', 'warning');
                 return;
             }
             this.hide();
-            swal('Success', 'Files uploaded!', 'success');
+            swal('赞', '文件上传成功!', 'success');
         },
         sending: function(file, xhr, formData) {
             formData.append('room', this.$('select[name="room"]').val());
@@ -86,7 +86,7 @@ Dropzone && (Dropzone.autoDiscover = false);
         submit: function(e) {
             e.preventDefault();
             if (!this.$('select[name="room"]').val()) {
-                swal('Woops!', 'Please specify a room.', 'warning');
+                swal('额!', '请指定个房间.', 'warning');
                 return;
             }
             this.dropzone.processQueue();

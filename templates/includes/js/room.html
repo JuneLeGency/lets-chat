@@ -33,15 +33,15 @@
             <ul class="lcb-messages">
             </ul>
             <form class="lcb-entry">
-                <textarea class="lcb-entry-input" placeholder="Got something to say?" autofocus></textarea>
-                <button type="submit" class="btn btn-info lcb-entry-button">Send</button>
+                <textarea class="lcb-entry-input" placeholder="说些什么?" autofocus></textarea>
+                <button type="submit" class="btn btn-info lcb-entry-button">发送</button>
             </form>
         </div><!-- lcb-chat end -->
         <div class="lcb-room-sidebar">
             <div class="lcb-room-sidebar-group lcb-room-sidebar-users">
                 <header class="lcb-room-sidebar-header">
                     <h3 class="lcb-room-sidebar-heading">
-                        <i class="fa fa-users"></i> Who's Here (<span class="lcb-room-sidebar-items-count"></span>)
+                        <i class="fa fa-users"></i> 都有谁 (<span class="lcb-room-sidebar-items-count"></span>)
                     </h3>
                 </header>
                 <ul class="lcb-room-sidebar-list"></ul>
@@ -50,7 +50,7 @@
             <div class="lcb-room-sidebar-group lcb-room-sidebar-files">
                 <header class="lcb-room-sidebar-header">
                     <h3 class="lcb-room-sidebar-heading">
-                        <i class="fa fa-file-text"></i> Files
+                        <i class="fa fa-file-text"></i> 文件
                     </h3>
                     <button class="btn lcb-room-sidebar-files-add lcb-upload-trigger">
                         <i class="fa fa-plus"></i>
@@ -66,11 +66,11 @@
                 <form action="" class="validate form-horizontal" method="post">
                     <div class="modal-header">
                         <button class="close hide-edit-room" type="button">&times;</button>
-                        <h4 class="modal-title">Edit Room</h4>
+                        <h4 class="modal-title">编辑房间</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="control-label col-sm-4">Name</label>
+                            <label class="control-label col-sm-4">名称</label>
                             <div class="col-sm-7">
                                 <input class="required name form-control" name=
                                 "name" type="text" value="{{name}}">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <label class=
-                            "control-label col-sm-4">Description</label>
+                            "control-label col-sm-4">简介</label>
                             <div class="col-sm-7">
                                 <textarea class="form-control" name=
                                 "description">{{description}}</textarea>
@@ -88,10 +88,10 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success pull-right submit-edit-room" type=
-                        "submit"><i class="icon-ok"></i> Save</button>
+                        "submit"><i class="icon-ok"></i> 保存</button>
                         <a class="archive-room btn btn-danger pull-left"
                         tabindex="-1"><i class="icon-remove icon-white"></i>
-                        Archive Room</a>
+                        封存房间</a>
                     </div>
                 </form>
             </div>

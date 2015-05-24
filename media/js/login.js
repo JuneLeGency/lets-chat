@@ -18,7 +18,7 @@
             switch(res.status) {
                 case 200:
                 case 201:
-                    swal('Success', res.responseJSON.message, 'success');
+                    swal('赞', res.responseJSON.message, 'success');
                     $form.hasClass('lcb-login-box-login') && $('.sweet-alert').each(function() {
                         $(this).find('.confirm').hide();
                         $(this).find('p').css('margin-bottom', '20px');
@@ -33,23 +33,23 @@
                     $('.lcb-show-box:visible').click();
                     break;
                 case 400:
-                    swal('Woops',
+                    swal('额',
                          res.responseJSON && res.responseJSON.message,
                          'error');
                     break;
                 case 401:
-                    swal('Woops.',
-                         'Your username or password is not correct',
+                    swal('额.',
+                         '你的用户名密码不正确',
                          'warning');
                     break;
                 case 403:
-                    swal('Woops.',
-                         'Your account is locked',
+                    swal('额.',
+                         '你的账号被锁',
                          'warning');
                     break;
                 default:
-                    swal('Woops.',
-                         'A server error has occured',
+                    swal('额.',
+                         '服务器错误',
                          'error');
                     break;
             }

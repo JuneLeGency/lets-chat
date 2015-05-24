@@ -191,7 +191,7 @@
             });
         },
         goodbye: function() {
-            swal('Archived!', '"' + this.model.get('name') + '" has been archived.', 'warning');
+            swal('封禁!', '"' + this.model.get('name') + '" 已经被封存.', 'warning');
         },
         updateMeta: function() {
             this.$('.lcb-room-heading .name').text(this.model.get('name'));
@@ -237,9 +237,9 @@
         archiveRoom: function(e) {
             var that = this;
             swal({
-                title: 'Do you really want to archive "' +
+                title: '您真的确定要封 "' +
                        this.model.get('name') + '"?',
-                text: "You will not be able to open it!",
+                text: "这个房间将不能再次被打开!",
                 type: "error",
                 confirmButtonText: "Yes, I'm sure",
                 allowOutsideClick: true,

@@ -27,11 +27,11 @@
             });
         },
         success: function() {
-            swal('Updated!', '', 'success');
+            swal('更新成功!', '', 'success');
             this.$el.modal('hide');
         },
         error: function() {
-            swal('Woops!', '', 'error');
+            swal('额!', '', 'error');
         },
         submit: function(e) {
         	e && e.preventDefault();
@@ -60,26 +60,26 @@
 
     window.LCB.ProfileModalView = window.LCB.ModalView.extend({
         success: function() {
-            swal('Profile Updated!', 'Your profile has been updated.',
+            swal('资料更改成功!', '您的资料已经更改.',
                  'success');
             this.$el.modal('hide');
         },
         error: function() {
-            swal('Woops!', 'Your profile was not updated.', 'error');
+            swal('额!', '资料变更失败.', 'error');
         }
     });
 
     window.LCB.AccountModalView = window.LCB.ModalView.extend({
         success: function() {
-            swal('Account Updated!', 'Your account has been updated.', 'success');
+            swal('账户修改成功!', '您的账户已经更改.', 'success');
             this.$el.modal('hide');
             this.$('[type="password"]').val('');
         },
         error: function(req) {
             var message = req.responseJSON && req.responseJSON.reason ||
-                          'Your account was not updated.';
+                          '您的账户更改失败.';
 
-            swal('Woops!', message, 'error');
+            swal('额!', message, 'error');
         },
         complete: function() {
             this.$('[name="current-password"]').val('');
@@ -115,7 +115,7 @@
             var that = this;
             $.post('./account/token/revoke', function(data) {
                 that.refresh();
-                swal('Success', 'Authentication token revoked!', 'success');
+                swal('赞', 'Authentication token revoked!', 'success');
             });
         },
         generateToken: function() {
